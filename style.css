@@ -1,0 +1,287 @@
+:root {
+    --img-height: 75px;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: radial-gradient(circle, rgba(43,163,26,1) 0%, rgba(59,138,48,1) 50%);
+    color: rgb(249,249,249);
+    font-family: 'Bangers', cursive;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+  background: linear-gradient(45deg, green 12%, transparent 0, transparent 88%, darkgreen 0),
+      linear-gradient(135deg, transparent 37%, green 0, green 63%, transparent 0),
+      linear-gradient(45deg, transparent 37%, darkgreen 0, darkgreen 63%, transparent 0) darkgreen;
+      background-size: 3.5px 2.5px;  
+  }
+  
+  h1 {
+    padding: 15px;
+  }
+  
+  img {
+    margin-top: 15px;
+    height: var(--img-height);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  }
+  
+  button {
+    padding: 3px 5px;
+    border-radius: 25px;
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    border: 1px solid black;
+    color: black;
+  }
+  button:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+  }
+  
+  #ctn {
+    height: 100vh;
+  }
+  #ctn:after {
+    content: "Nintendo";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    z-index: -1;
+    font-size: 100px;
+    color: darkgreen; 
+    font-family: 'Questrial', sans-serif;
+  }
+  
+  #ctn-start,
+  #ctn-game-over {
+    border: 4px dotted whitesmoke;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,.9);
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.5);  
+    margin: 25px auto;
+    padding: 5px;
+    width: 275px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
+  
+  #ctn-start {
+    width: 435px;
+    height: 275px;
+  }
+  @media only screen and (max-width: 600px) {
+    #ctn-start {
+      width: 250px;
+      height: 350px;
+      text-align: center;
+    }
+  }
+  
+  #ctn-start span,
+  #ctn-game-over span{
+    margin: 10px;
+  }
+  
+  #ctn-start img,
+  #ctn-game-over img {
+    margin: 10px 20px -5px;
+   -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+  }
+  
+  #ctn-start h1{
+    color: goldenrod;
+  }
+  
+  #ctn-game-over {
+    height: 300px;
+  }
+  
+  #ctn-game-over img{
+    margin: -10px 20px -5px;
+  }
+  
+  #ctn-game-over h1{
+    margin-bottom: 5px;
+  }
+  #ctn-game-over h2{
+    margin: 10px;
+  }
+  
+  #best {
+    font-family: 'Questrial', sans-serif;
+    color: goldenrod;
+  }
+  
+  #amiibo-figure,
+  #amiibo-card,
+  #restart-amiibo-figure,
+  #restart-amiibo-card {
+    cursor: pointer;
+  }
+  
+  #amiibo-figure:hover,
+  #amiibo-card:hover,
+  #restart-amiibo-figure:hover,
+  #restart-amiibo-card:hover {
+    cursor: pointer;
+    color: goldenrod;
+  }
+  
+  #ctn-start button,
+  #ctn-game-over button{
+  margin: 25px;
+  }
+  #ctn-start button:hover {
+    cursor: pointer;
+  }
+  
+  #score-board {
+    font-family: 'Questrial', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 640px;
+    display: none;
+  }
+  #score-board div {
+    margin: 5px 25px;
+    font-size: 25px;
+  }
+  
+  #ctn-game {
+    font-family: 'Questrial', sans-serif;
+    margin: 0 auto;
+    width: 640px;
+    height: 640px;
+    min-height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;  
+    position: relative;
+  }
+  
+  .card {
+    border: 8px solid darkred;
+  }
+  
+  .card-layout {
+    border-radius: 10px;
+    width: 100px;
+    height: 150px;
+    padding: 0px 5px 20px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(249,249,249);
+    color: #111;
+    text-shadow: .5px .5px 1px goldenrod;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.5);  
+  }
+  
+  .figure {
+    border: 8px solid goldenrod;
+  }
+  
+  .memory-game { 
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1000px;
+  }
+  
+  .memory-card {
+    margin: 5px;
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px); 
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+  }
+  .memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+  }
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%; 
+    padding: 25px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+  
+  .back-face {
+    border: 10px solid rgb(249,249,249);
+    background-color: black;
+    color: darkred;
+    z-index: 10;
+   }
+  
+  .back-face h5 {
+    border: 2px solid rgb(236,28,36);
+    border-radius: 25px;
+    padding: 0 5px;
+    background-color: rgb(249,249,249);
+    color: rgb(236,28,36);
+    text-shadow: none;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay.active {
+    display: flex;
+    cursor: wait;
+  }
+  
+  /* Control Start and Restart */
+  #ctn-start {
+  /*   display: none; */
+  /*   display: flex; */
+  } 
+  #ctn-game {
+    display: none;
+  }
+  #ctn-game-over {
+    display: none;
+  /*   display: flex; */
+  }

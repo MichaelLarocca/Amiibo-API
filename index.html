@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Questrial&display=swap" rel="stylesheet">
+    <title>Amiibo API</title>
+</head>
+    <div id="ctn">
+    
+        <div id="ctn-start">
+        <h1>Super Mario Card Matching Game!</h1>
+        <h2>Select Card Type</h2>
+        <span><img id="mario-figure" src="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png">
+            <img id="mario-card" src="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_09c00401-026c0e02.png"></span>
+        <div><span id="amiibo-figure">Amiibo Figure</span><span id="amiibo-card">Amiibo Card</span></div>
+        <button id="start-game">Start Game</button>
+        </div>
+    
+        <div id="score-board">
+        <div id="timer"></div>
+        <div id="flips"></div>
+        </div>
+        
+        <div id="ctn-game"></div>
+    
+        <div id="ctn-game-over">
+        <h1 id="game-results">Game Over</h1>
+        <h6 id="best"><div><span id="best-time">Best Time:</span><span id="best-flips">Least Flips:</span></div></h6>
+        <h2>Play Again?</h2>
+        <span><img id="restart-mario-figure" src="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_00000000-00340102.png">
+            <img id="restart-mario-card" src="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_09c00401-026c0e02.png"></span>
+        <div><span id="restart-amiibo-figure">Amiibo Figure</span><span id="restart-amiibo-card">Amiibo Card</span></div>
+        <button id="restart-game">Start Game</button>
+        </div>  
+    
+        <div class="overlay">
+        <div class="loading">
+            <h1>LOADING...</h1>
+        </div>
+        </div>  
+    
+    </div>
+        
+</body>
+</html>
