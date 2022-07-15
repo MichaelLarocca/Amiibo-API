@@ -31,6 +31,18 @@ const gameResults = document.getElementById("game-results");
 let result = false;
 let countDown;
 
+// Sounds
+const soundMarioCoin = new Audio("audio/Mario-Coin.mp3");
+const soundMarioGameOverLose = new Audio("audio/Mario-Game-Over-Lose.mp3");
+const soundMarioGameOverWin = new Audio("audio/Mario-Game-Over-Win.mp3");
+const soundMarioLetsGo = new Audio("audio/Mario-Lets-Go.mp3");
+const soundMarioMamaMia = new Audio("audio/Mario-Mama-Mia.mp3");
+const soundMarioOhNo = new Audio("audio/Mario-Oh-No.mp3");
+const soundMarioOhYea = new Audio("audio/Mario-Oh-Yea.mp3");
+const soundMarioThemeSong = new Audio("audio/Mario-Theme-Song.mp3");
+const soundMarioYahoo = new Audio("audio/Mario-Yahoo.mp3");
+soundMarioThemeSong.volume = 0.7;
+
 amiiboFigure.addEventListener("click", choseAmiiboFigure);
 marioFigure.addEventListener("click", choseAmiiboFigure);
 
@@ -68,6 +80,7 @@ let numberArrayUsedWithoutDuplicates;
 
 // Main program code
 async function fetchAllAmiibos() {
+	soundMarioLetsGo.play();
 	ctnStart.style.display = "none";
 	ctnGameOver.style.display = "none";
 	document.querySelector(".overlay").classList.add("active");
@@ -186,6 +199,7 @@ async function fetchAllAmiibos() {
 		if (firstCard.dataset.image === secondCard.dataset.image) {
 			match += 1;
 			disableCards();
+			soundMarioCoin.play();
 		} else {
 			unflipCards();
 		}
@@ -244,6 +258,8 @@ function checkForWin() {
 			bestFlipsSpan.innerHTML = `Least Flips: ${bestFlips}`;
 		}
 		resetVariables();
+		soundMarioGameOverLose.play();
+		soundMarioOhNo.play();
 	}
 
 	// Check for win
@@ -261,6 +277,9 @@ function checkForWin() {
 			for (let i = 1; i < cards.length; i++) {
 				cards[i].remove();
 			}
+			soundMarioThemeSong.pause();
+			soundMarioGameOverWin.play();
+			soundMarioOhYea.play();
 		}, 1000);
 
 		// Check for best time
@@ -290,6 +309,8 @@ function startCountDown() {
 		currentTime -= 1;
 		timer.innerHTML = `Time: ${currentTime}`;
 	}, 1000);
+	soundMarioThemeSong.currentTime = 0;
+	soundMarioThemeSong.play();
 }
 
 function resetVariables() {
